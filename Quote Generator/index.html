@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator - Daily Inspiration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Background Animation -->
+        <div class="background-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                </svg>
+                <h1>Quote Generator</h1>
+            </div>
+            <p class="subtitle">Find inspiration in every word</p>
+        </header>
+
+        <!-- Quote Display -->
+        <div class="quote-container" id="quoteContainer">
+            <div class="quote-card">
+                <div class="quote-mark opening">"</div>
+                <blockquote class="quote-text" id="quoteText">
+                    Click the button below to discover your daily dose of inspiration
+                </blockquote>
+                <div class="quote-mark closing">"</div>
+                <div class="quote-author" id="quoteAuthor">Welcome</div>
+                <div class="quote-category" id="quoteCategory"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="generate-btn" id="generateBtn">
+                <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                    <path d="M21 3v5h-5"></path>
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                    <path d="M3 21v-5h5"></path>
+                </svg>
+                Generate New Quote
+            </button>
+            
+            <div class="action-buttons">
+                <button class="action-btn copy-btn" id="copyBtn" title="Copy Quote">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                </button>
+                
+                <button class="action-btn share-btn" id="shareBtn" title="Share Quote">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </button>
+                
+                <button class="action-btn favorite-btn" id="favoriteBtn" title="Add to Favorites">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <label for="categorySelect">Category:</label>
+            <select id="categorySelect" class="category-select">
+                <option value="all">All Categories</option>
+                <option value="motivational">Motivational</option>
+                <option value="inspirational">Inspirational</option>
+                <option value="life">Life</option>
+                <option value="success">Success</option>
+                <option value="wisdom">Wisdom</option>
+                <option value="happiness">Happiness</option>
+                <option value="love">Love</option>
+                <option value="friendship">Friendship</option>
+            </select>
+        </div>
+
+        <!-- Favorites Section -->
+        <div class="favorites-section" id="favoritesSection">
+            <h3>Your Favorite Quotes</h3>
+            <div class="favorites-list" id="favoritesList">
+                <p class="no-favorites">No favorite quotes yet. Click the heart icon to save quotes!</p>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <span id="toastMessage">Quote copied to clipboard!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
